@@ -9,35 +9,45 @@ body {
   display: flex;
 }
 
-.creditcard {
+.card {
+  background: transparent;
+  position: relative;
   width: 500px;
   height: 300px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .card-content {
-  background: linear-gradient(45deg, #0045c7, #ff2c7d);
-  position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  border-radius: 15px;
-  transition: transform 0.8s;
 }
 
-.creditcard:hover .card-content {
+.card:hover {
   transform: rotateY(180deg);
 }
 
-.content-front,
-.content-back {
+/* .card:hover .card-content {
+  transform: rotateY(180deg);
+} */
+
+.cardface-front,
+.cardface-back {
+  background: linear-gradient(45deg, #0045c7, #ff2c7d);
+  border-radius: 15px;
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
 
-.content-front {
+.cardface-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.images {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -71,7 +81,6 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* margin-bottom: 10px; */
   margin-left: 35px;
   margin-right: 35px;
 }
@@ -93,8 +102,6 @@ p {
   justify-content: space-between;
   margin-left: 35px;
   margin-right: 35px;
-  /* margin-bottom: 20px; */
-  /* margin-top: 5px; */
 }
 
 .name {
@@ -107,22 +114,63 @@ p {
   color: floralwhite;
 }
 
-.content-back {
-  display: flex;
+.cardface-back {
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; */
   transform: rotateY(180deg);
 }
 
 .images-back {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
 }
 
-.white-striped-banner {
+.black-banner {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  background-color: black;
+  margin-top: 25px;
+}
+
+.striped-banner {
   display: flex;
   flex-direction: column;
   height: 50px;
-  color: rgb(200, 26, 20);
+  margin-left: 30px;
+  margin-right: 100px;
+  background: repeating-linear-gradient(
+    45deg,
+    floralwhite 10px,
+    rgb(228, 226, 226) 10px,
+    floralwhite 20px
+  );
+}
+
+.text-line {
+  display: flex;
+  flex-direction: row;
+  color: floralwhite;
+  margin: 35px;
+}
+
+.signature-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid;
+  border-color: black;
+}
+
+.signature {
+  color: floralwhite;
+  margin-left: 35px;
+}
+
+.visa-2 {
+  margin-right: 30px;
+  height: 50px;
+  width: 150px;
 }
